@@ -1,0 +1,147 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+margin: 0;
+}
+
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+input, button, textarea, select {
+font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+#root, #__next {
+isolation: isolate;
+}
+
+
+
+/* Styles */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.background-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-image: url(library-background.png);
+    transform: scale(1.1);
+    opacity: 0.2;
+}
+
+body {
+    font-family: "Roboto", serif;
+    display: grid;
+    grid-template-rows: 100px 1fr 75px 46.4px;
+}
+
+.header {
+    padding: 15px;
+    border-radius: 15px;
+    background: #1f6e3e;
+    color: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 3px 2px #164a2a;
+}
+
+.header svg {
+    width: 70px;
+    fill: #dcfce7;
+    margin-right: 10px;
+}
+
+main {
+    grid-row: 2;
+    overflow: hidden;
+}
+
+.display-container {
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(100px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));
+    padding: 25px 5px;
+}
+
+.book-card {
+    background: #f5faf7;
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px #a6a9a8;
+    display: grid;
+    grid-template: min-content 1fr / 15px 1fr;
+}
+
+.color-block {
+    grid-row: 1 / 3;
+    background-image: linear-gradient(45deg, #10b981, #14b8a6);
+    border-radius: 15px 0 0 15px;
+}
+
+.book-block {
+    padding: 20px 20px 0 20px;
+}
+
+.book-block p:first-of-type {
+    color: rgb(105, 105, 105);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.book-block p:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7.5px;
+    background-color: rgb(160, 160, 160);
+    width: 200px;
+    height: 1px;
+    border-radius: 1px;
+}
+
+.button-block {
+    justify-self: right;
+    padding: 10px 20px 15px;
+}
+
+.read-toggle {
+    width: 100px;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    transition: transform 0.15s;
+}
+
+.read-toggle:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background: #729a32;
+    color: #f1fcde;
+    border-radius: 8px;
+    font-size: 1.1em;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 3px 2px #49641d;
+}
