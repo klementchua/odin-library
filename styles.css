@@ -80,6 +80,7 @@ main {
 .display-container {
     display: grid;
     grid-template: repeat(auto-fit, minmax(100px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
     padding: 25px 5px;
 }
 
@@ -89,6 +90,11 @@ main {
     box-shadow: 2px 2px 3px #a6a9a8;
     display: grid;
     grid-template: min-content 1fr / 15px 1fr;
+    transition: 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
 }
 
 .color-block {
@@ -99,6 +105,11 @@ main {
 
 .book-block {
     padding: 20px 20px 0 20px;
+}
+
+.book-block h2 {
+    line-height: 1.1;
+    font-size: 1.4em;
 }
 
 .book-block p:first-of-type {
@@ -130,8 +141,20 @@ main {
     transition: transform 0.15s;
 }
 
+.read-toggle.read {
+    background-color: #22c55e;
+}
+
+.read-toggle.notread {
+    background-color: #ef4444;
+}
+
 .read-toggle:hover {
     transform: scale(1.05);
+}
+
+.read-toggle:active {
+    transform: scale(1);
 }
 
 .footer {
