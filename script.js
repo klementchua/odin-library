@@ -50,6 +50,8 @@ addBookToLibrary("The Lord of The Rings", "J.R.R Tolkien", 1222, "Not Read");
 addBookToLibrary("The Hunger Games: The Ballad of Songbirds and Snakes", "Suzanne Collins", 528, "Read");
 displayBooks(0)
 displayBooks(1)
+displayBooks(0)
+displayBooks(1)
 
 
 
