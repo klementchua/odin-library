@@ -169,7 +169,7 @@ main::-webkit-scrollbar-thumb:hover {
     background-color: #ef4444;
 }
 
-.read-toggle:hover, #add-book:hover {
+.read-toggle:hover, #add-book:hover, .form-buttons button:hover {
     transform: scale(1.05);
 }
 
@@ -207,15 +207,58 @@ main::-webkit-scrollbar-thumb:hover {
 
 #new-book-dialog {
     margin: auto;
-    width: clamp(200px, 50vw, 500px);
-    height: 400px;
-    padding: 40px;
+    width: clamp(370px, 50vw, 500px);
+    height: 360px;
+    padding: 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 4px 2px rgb(102, 102, 102);
 }
 
-.input-info input {
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.input-info > input {
     width: 100%;
-    border: 2px solid black;
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 8px;
     padding: 5px;
     margin-bottom: 15px
+}
+
+#new-book-dialog h2 {
+    margin-bottom: 15px;
+}
+
+.input-info #book-pages {
+    width: 50%;
+    display: block;
+}
+
+label[for="book-read"] {
+    display: flex;
+    font-size: 1.1em;
+}
+
+#book-read {
+    margin-left: 10px;
+}
+
+.form-buttons {
+    margin: 30px 20px 0 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-buttons button {
+    border-radius: 50px;
+    background-color: #f87171;
+    border: 2px solid #7f1d1d;
+    transition: 0.1s;
+}
+
+#confirm-button {
+    background-color: #a3e635;
+    border: 2px solid #365314;
 }
