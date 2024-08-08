@@ -1,3 +1,4 @@
+// Initialise library array
 const myLibrary = [];
 
 // Functions
@@ -24,7 +25,10 @@ function displayBooks(i) {
     colorBlock.classList.add("color-block");
     const bookBlock = document.createElement("div");
     bookBlock.classList.add("book-block");
-    bookBlock.innerHTML = `<h2>${book.title}</h2>\n<p>${book.author}</p>\n<p><strong>Pages:</strong> ${book.pages}</p>`
+    bookBlock.innerHTML = `<h2>${book.title}</h2>\n<p>${book.author}</p>\n<p><strong>Pages:</strong> ${book.pages}</p>`;
+    const deleteBlock = document.createElement("div");
+    deleteBlock.classList.add("delete-block");
+    deleteBlock.innerHTML = '<svg id="trash-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>'
     const buttonBlock = document.createElement("div");
     buttonBlock.classList.add("button-block");
 
@@ -39,6 +43,7 @@ function displayBooks(i) {
     // Arrange book card
     bookCard.appendChild(colorBlock);
     bookCard.appendChild(bookBlock);
+    bookCard.appendChild(deleteBlock);
     bookCard.appendChild(buttonBlock);
 
     // Append book card to container
@@ -46,19 +51,13 @@ function displayBooks(i) {
     bookContainer.append(bookCard);
 }
 
-addBookToLibrary("The Lord of The Rings", "J.R.R Tolkien", 1222, "Not Read");
-addBookToLibrary("The Hunger Games: The Ballad of Songbirds and Snakes", "Suzanne Collins", 528, "Read");
-displayBooks(0)
-displayBooks(1)
-displayBooks(0)
-displayBooks(1)
-
 
 
 // Event Delegation / Listening
 
 const displayContainer = document.querySelector(".display-container");
 displayContainer.addEventListener("click", (x) => {
+    // Toggle read status
     if (x.target.classList.contains("read-toggle")) {
         if (x.target.classList.contains("read")) {
             x.target.classList.replace("read", "notread");
@@ -70,7 +69,12 @@ displayContainer.addEventListener("click", (x) => {
             x.target.read = "Read";
         }
     }
+    // Delete book card
+    else if (x.target.id === "trash-svg" || x.target.parentNode.id === "trash-svg") {
+        x.target.closest(".book-card").remove();
+    }
 })
+
 
 
 // Dialog JS

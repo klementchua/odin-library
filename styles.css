@@ -108,7 +108,7 @@ main::-webkit-scrollbar-thumb:hover {
     border-radius: 15px;
     box-shadow: 2px 2px 3px #a6a9a8;
     display: grid;
-    grid-template: min-content 1fr / 15px 1fr;
+    grid-template: min-content 1fr / 15px 1fr 40px;
     transition: 0.2s;
 }
 
@@ -148,7 +148,24 @@ main::-webkit-scrollbar-thumb:hover {
     border-radius: 1px;
 }
 
+.delete-block {
+    margin: 15px 15px 0 0;
+}
+
+.delete-block svg {
+    transition: 0.1s;
+}
+
+.delete-block svg:hover {
+    transform: scale(1.2);
+}
+
+#trash-svg {
+    z-index: 1;
+}
+
 .button-block {
+    grid-column: 2 / 4;
     justify-self: right;
     align-self: self-end;
     padding: 10px 20px 15px;
