@@ -232,10 +232,6 @@ main::-webkit-scrollbar-thumb:hover {
     box-shadow: 3px 3px 4px 2px rgb(102, 102, 102);
 }
 
-::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
 .input-info > input {
     width: 100%;
     border: 1px solid rgb(0, 0, 0);
@@ -279,3 +275,42 @@ label[for="book-read"] {
     background-color: #a3e635;
     border: 2px solid #365314;
 }
+
+
+/* Dialog transitions */
+/*   Open state of the dialog  */
+dialog[open] {
+    opacity: 1;
+    transform: scaleX(1);
+}
+  
+/*   Closed state of the dialog   */
+dialog {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s allow-discrete;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+    background-color: rgb(0 0 0 / 0%);
+    transition: all 0.3s allow-discrete;
+}
+
+dialog[open]::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: rgb(0 0 0 / 0%);
+    }
+}
+  
