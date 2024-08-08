@@ -131,6 +131,7 @@ main {
 
 .button-block {
     justify-self: right;
+    align-self: self-end;
     padding: 10px 20px 15px;
 }
 
@@ -149,12 +150,28 @@ main {
     background-color: #ef4444;
 }
 
-.read-toggle:hover {
+.read-toggle:hover, #add-book:hover {
     transform: scale(1.05);
 }
 
-.read-toggle:active {
+.read-toggle:active, #add-book:active {
     transform: scale(1);
+}
+
+.button-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#add-book {
+    font-size: 1.3em;
+    padding: 10px;
+    border: 2px solid #1a2e05;
+    border-radius: 8px;
+    background: none;
+    background-image: linear-gradient(45deg, #10b981, #14b8a6);
+    transition: 0.1s;
 }
 
 .footer {
@@ -167,4 +184,19 @@ main {
     display: flex;
     justify-content: center;
     box-shadow: 2px 3px 2px #49641d;
+}
+
+#new-book-dialog {
+    margin: auto;
+    width: clamp(200px, 50vw, 500px);
+    height: 400px;
+    padding: 40px;
+}
+
+.input-info input {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 15px
 }
